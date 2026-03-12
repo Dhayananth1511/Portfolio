@@ -555,6 +555,44 @@
       font-size: 0.8rem;
     }
 
+    /* ── Hero Tags Ticker ── */
+    .hero-tags-wrap {
+      overflow: hidden;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto 1.4rem;
+      -webkit-mask-image: linear-gradient(90deg, transparent, black 15%, black 85%, transparent);
+      mask-image: linear-gradient(90deg, transparent, black 15%, black 85%, transparent);
+    }
+
+    .hero-tags-track {
+      display: flex;
+      gap: 0.75rem;
+      width: max-content;
+      animation: ticker 22s linear infinite;
+    }
+
+    .hero-tags-track:hover { animation-play-state: paused; }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.4rem 1rem;
+      background: rgba(124,92,252,0.1);
+      border: 1px solid rgba(124,92,252,0.3);
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--accent2);
+      white-space: nowrap;
+    }
+
+    @keyframes ticker {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
     /* ── Animations ── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(30px); }
@@ -598,7 +636,20 @@
   <!-- Hero -->
   <section class="hero">
     <div class="hero-text">
-      <p class="hero-eyebrow">AI & ML Enthusiast · Full Stack Developer</p>
+      <div class="hero-tags-wrap">
+        <div class="hero-tags-track">
+          <span class="hero-tag">🎓 AI &amp; Data Science Student</span>
+          <span class="hero-tag">💻 Aspiring Software Engineer</span>
+          <span class="hero-tag">☕ Java Developer</span>
+          <span class="hero-tag">🤖 Machine Learning Enthusiast</span>
+          <span class="hero-tag">⚡ AI Automation</span>
+          <span class="hero-tag">🎓 AI &amp; Data Science Student</span>
+          <span class="hero-tag">💻 Aspiring Software Engineer</span>
+          <span class="hero-tag">☕ Java Developer</span>
+          <span class="hero-tag">🤖 Machine Learning Enthusiast</span>
+          <span class="hero-tag">⚡ AI Automation</span>
+        </div>
+      </div>
       <h2>Hi, I'm<br><span>Dhayananth N</span></h2>
       <p>Building clean, user-friendly web experiences — from responsive interfaces to intelligent applications.</p>
       <a href="#projects" class="btn">See My Work →</a>
