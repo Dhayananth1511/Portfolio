@@ -184,7 +184,7 @@
 
     .hero-text h2 {
       font-family: 'Syne', sans-serif;
-      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-size: clamp(2.4rem, 6vw, 4.5rem);
       font-weight: 800;
       line-height: 1.05;
       letter-spacing: -0.04em;
@@ -207,9 +207,9 @@
     }
     .hero-container{
   display:grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 250px 1fr;
   align-items:center;
-  gap:3rem;
+  gap:1.5rem;
   max-width:1100px;
   margin:auto;
 }
@@ -220,12 +220,13 @@
 }
 
 .hero-photo img{
-  width:260px;
-  height:260px;
+  width:220px;
+  height:220px;
   object-fit:cover;
   border-radius:50%;
   border:3px solid rgba(124,92,252,0.5);
   box-shadow:0 0 40px rgba(124,92,252,0.4);
+  margin-left:-20px;
 }
 
 /* Mobile */
@@ -484,6 +485,225 @@
     .project-link svg { transition: transform 0.2s; }
     .project-card:hover .project-link svg { transform: translateX(3px); }
 
+    /* ── Certificates ── */
+    .certificates-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .certificate-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      text-decoration: none;
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+      display: block;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .certificate-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(124,92,252,0.06), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .certificate-card:hover {
+      border-color: rgba(124,92,252,0.5);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    .certificate-card:hover::before { opacity: 1; }
+
+    .certificate-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(124,92,252,0.15);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+      font-size: 1.3rem;
+    }
+
+    .certificate-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .certificate-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .certificate-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--accent2);
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .certificate-link svg { transition: transform 0.2s; }
+    .certificate-card:hover .certificate-link svg { transform: translateX(3px); }
+
+    /* ── Experience ── */
+    .experience-timeline {
+      display: grid;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .experience-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+    }
+
+    .experience-card::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 4px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+    }
+
+    .experience-card:hover {
+      border-color: rgba(124,92,252,0.5);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      gap: 1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .experience-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .exp-duration {
+      font-size: 0.85rem;
+      color: var(--accent2);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .exp-company {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin: 0.5rem 0 1rem;
+      font-weight: 500;
+    }
+
+    .exp-description {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* ── Coding Platforms ── */
+    .coding-platforms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .coding-platform-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      text-decoration: none;
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+      display: block;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .coding-platform-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(124,92,252,0.06), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .coding-platform-card:hover {
+      border-color: rgba(124,92,252,0.5);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    .coding-platform-card:hover::before { opacity: 1; }
+
+    .platform-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(124,92,252,0.15);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+      font-size: 1.3rem;
+    }
+
+    .coding-platform-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .coding-platform-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .platform-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--accent2);
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .coding-platform-card:hover .platform-link { transform: translateX(3px); transition: transform 0.2s; }
+
     /* ── Contact ── */
     #contact {
       text-align: center;
@@ -647,7 +867,7 @@
     @media (max-width: 768px) {
       .about-grid { grid-template-columns: 1fr; gap: 2rem; }
       .nav-links { gap: 1.2rem; }
-      .hero-text h2 { font-size: 2.6rem; }
+      .hero-text h2 { font-size: 2.2rem; }
       .hero-cta { flex-direction: column; align-items: center; }
       .nav-resume-btn { display: none; } /* hide on mobile to save space */
     }
@@ -666,8 +886,10 @@
       </a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#certificates">Certificates</a></li>
         <li><a href="#contact">Contact</a></li>
         <!-- ★ RESUME BUTTON IN NAV ★ -->
         <li>
@@ -706,6 +928,7 @@
         </div>
       </div>
       <h2>Hi, I'm<br><span>Dhayananth N</span></h2>
+      <p style="font-size: 1rem; color: var(--accent); margin-bottom: 1.5rem; font-weight: 500;">Aspiring Software Engineer | Full Stack Developer | AI Enthusiast</p>
       <p>Building clean, user-friendly web experiences — from responsive interfaces to intelligent applications.</p>
 
       <!-- ★ HERO CTA BUTTONS ★ -->
@@ -729,11 +952,19 @@
         <div class="about-tag">B.Tech — AI & Data Science</div>
         <h3>Bannari Amman Institute of Technology</h3>
         <p>Pursuing my degree with a focus on real-world AI applications and full-stack development.</p>
+        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.9rem;">
+          <p style="margin-bottom: 0.8rem;"><strong style="color: var(--text);">Education History:</strong></p>
+          <div style="margin-left: 0.5rem; color: var(--muted); line-height: 1.8;">
+            <p><strong>SSLC:</strong> 81.8%</p>
+            <p><strong>HSC:</strong> 89.5%</p>
+            <p style="margin-top: 0.8rem;"><strong>B.Tech - AI & DS:</strong> Bannari Amman Institute of Technology</p>
+          </div>
+        </div>
       </div>
       <div class="about-text">
         <div class="section-label">About Me</div>
         <h2>Passionate about building things that matter.</h2>
-        <p>I'm an enthusiastic and dedicated developer skilled in HTML, CSS, and JavaScript. I enjoy solving problems and designing responsive websites that look great on any device. Committed to bridging the gap between AI research and practical, impactful software.</p>
+        <p>I'm an enthusiastic and dedicated developer skilled in HTML, CSS, and JavaScript. I enjoy solving problems and designing responsive websites that look great on any device. Committed to bridging the gap between AI research and practical, impactful software. Quick learner with strong DSA fundamentals and collaborative mindset.</p>
       </div>
     </div>
   </section>
@@ -753,6 +984,14 @@
       <div class="skill-box">AI / ML</div>
       <div class="skill-box">LLM & Prompt Eng.</div>
       <div class="skill-box">UI/UX Design</div>
+      <div class="skill-box">Figma</div>
+      <div class="skill-box">Canva</div>
+      <div class="skill-box">Google Colab</div>
+      <div class="skill-box">MS Office Suite</div>
+      <div class="skill-box">DevOps</div>
+      <div class="skill-box">Database Design</div>
+      <div class="skill-box">Data Structures</div>
+      <div class="skill-box">Full Stack Dev</div>
     </div>
   </section>
 
@@ -782,6 +1021,127 @@
         </a>
       </div>
 
+      <div class="project-card">
+        <div class="project-icon">🏗️</div>
+        <h3>HireMatrix AI</h3>
+        <p>Intelligent automation tool for streamlining the hiring process with AI-powered candidate matching.</p>
+        <a class="project-link" href="#" target="_blank">
+          Learn More
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🍕</div>
+        <h3>GigPulse</h3>
+        <p>AI-driven parametric insurance solution designed for food delivery workers and gig economy professionals.</p>
+        <a class="project-link" href="#" target="_blank">
+          Learn More
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🏦</div>
+        <h3>Bank Management System</h3>
+        <p>Comprehensive Java-based banking application demonstrating OOP principles and database integration.</p>
+        <a class="project-link" href="#" target="_blank">
+          Learn More
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Certificates -->
+  <section id="certificates">
+    <div class="section-label">Achievements</div>
+    <h2>My Certificates</h2>
+    <div class="certificates-grid">
+
+      <div class="certificate-card">
+        <div class="certificate-icon">🏢</div>
+        <h3>Oracle Certified Professional - Java SE 17</h3>
+        <p>Oracle University Professional Developer Certification</p>
+        <a class="certificate-link" href="Certificates/7376242AD147-Dhayananth%20N.pdf" target="_blank">
+          View Certificate
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="certificate-card">
+        <div class="certificate-icon">🎖️</div>
+        <h3>Basics of Python</h3>
+        <p>Infosys Springboard - Python Fundamentals</p>
+        <a class="certificate-link" href="Certificates/infosis%20Certificate.jpg" target="_blank">
+          View Certificate
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="certificate-card">
+        <div class="certificate-icon">🏆</div>
+        <h3>The Java Language</h3>
+        <p>Coursera - LearnQuest Course</p>
+        <a class="certificate-link" href="Certificates/Certificate.png" target="_blank">
+          View Certificate
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="certificate-card">
+        <div class="certificate-icon">⚙️</div>
+        <h3>Full Stack Development Internship</h3>
+        <p>TechnoHacks Solutions - Internship Certificate</p>
+        <a class="certificate-link" href="Certificates/Dhayananth%20N.pdf" target="_blank">
+          View Certificate
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience">
+    <div class="section-label">Professional Journey</div>
+    <h2>My Experience</h2>
+    <div class="experience-timeline">
+      <div class="experience-card">
+        <div class="exp-header">
+          <h3>Full Stack Development & DevOps Intern</h3>
+          <span class="exp-duration">July - August 2025</span>
+        </div>
+        <p class="exp-company">🏢 TechnoHacks Solutions Pvt. Ltd.</p>
+        <p class="exp-description">Developed full-stack applications with focus on DevOps practices. Consistent, hardworking, and committed to delivering quality solutions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coding Platforms -->
+  <section id="coding-platforms">
+    <div class="section-label">Competitive Programming</div>
+    <h2>Coding Profiles</h2>
+    <div class="coding-platforms-grid">
+      <a class="coding-platform-card" href="https://leetcode.com/u/Dhayananth1511/" target="_blank">
+        <div class="platform-icon">💻</div>
+        <h3>LeetCode</h3>
+        <p>Solving complex algorithms and data structures problems</p>
+        <span class="platform-link">Visit Profile →</span>
+      </a>
+      <a class="coding-platform-card" href="https://www.hackerrank.com/dhayananth1511" target="_blank">
+        <div class="platform-icon">🎯</div>
+        <h3>HackerRank</h3>
+        <p>Practicing coding challenges and competitions</p>
+        <span class="platform-link">Visit Profile →</span>
+      </a>
+      <a class="coding-platform-card" href="#" target="_blank">
+        <div class="platform-icon">⚡</div>
+        <h3>Naukri Code360</h3>
+        <p>Advanced coding assessments and problem solving</p>
+        <span class="platform-link">Visit Profile →</span>
+      </a>
     </div>
   </section>
 
@@ -820,7 +1180,7 @@
   </section>
 
   <footer>
-    <p>Crafted with care by <strong>Dhayananth N</strong> · 2025</p>
+    <p>Crafted with care by <strong>Dhayananth N</strong> · 2026</p>
   </footer>
 
   <script>
@@ -835,10 +1195,21 @@
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('section > *, .project-card, .about-card, .about-text, .contact-box').forEach(el => {
+    document.querySelectorAll('section > *, .project-card, .about-card, .about-text, .contact-box, .certificate-card, .experience-card, .coding-platform-card').forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(24px)';
       observer.observe(el);
+    });
+
+    // Make entire certificate card clickable
+    document.querySelectorAll('.certificate-card').forEach(card => {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', () => {
+        const link = card.querySelector('.certificate-link');
+        if (link) {
+          window.open(link.href, link.target);
+        }
+      });
     });
   </script>
 </body>
